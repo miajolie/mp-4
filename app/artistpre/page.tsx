@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import ArtDisplay from "@/components/ArtDisplay";
 import { Artiste } from "@/types/artist";
 
@@ -42,7 +42,10 @@ export default function ArtistPre(){
     }
     console.log(data)
     return (
-        <ArtDisplay inputArt = {data}/>
+        <Suspense>
+            <ArtDisplay inputArt = {data}/>
+        </Suspense>
+        
     );
 }
 
