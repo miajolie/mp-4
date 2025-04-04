@@ -5,6 +5,7 @@ export async function fetchArtistData(name: string) {
 
   const apiUrl = `https://api.harvardartmuseums.org/person?apikey=${apiKey}&q=displayname:${name}`;
   const res = await fetch(apiUrl);
+  
   if (!res.ok) {
     throw new Error(`Failed to fetch artist, status: ${res.status}`);
   }
