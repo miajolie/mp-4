@@ -45,7 +45,7 @@ export default function ArtistPre(){
     }
     console.log(data)
     return (
-        <Suspense>
+        <Suspense fallback={<div>Loading art display...</div>}>
             <ArtDisplay inputArt = {data}/>
         </Suspense>
         
