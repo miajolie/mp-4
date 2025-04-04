@@ -11,7 +11,7 @@ export default function ArtistPre(){
 
     //changed any to Artists and null to []
     const [data, setData]= useState<Artiste>([]);
-    const [error, setError]= useState<string | null>(null);
+    // const [error, setError]= useState<string | null>(null);
 
     useEffect(()=>{
         if (!name) return;
@@ -26,15 +26,16 @@ export default function ArtistPre(){
                 const json = await res.json();
                 setData(json);
             }catch (err){
-                setError("Unknown Error");
+                // setError("Unknown Error");
+                throw new Error ("Unknown Error");
             }
         };
         fetchData();
     }, [name]);
 
-    if (error){
-        return <div> Error: {error}</div>
-    }
+    // if (error){
+    //     return <div> Error: {error}</div>
+    // }
 
     if(!data){
         return <div>Finding your artist...</div>;
