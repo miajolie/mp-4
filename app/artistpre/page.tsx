@@ -25,7 +25,7 @@ export default function ArtistPre(){
                 }
                 const json = await res.json();
                 setData(json);
-            }catch (_err){
+            }catch{
                 // setError("Unknown Error");
                 throw new Error ("Unknown Error");
             }

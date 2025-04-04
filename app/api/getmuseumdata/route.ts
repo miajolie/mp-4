@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(data.records);
     
-  } catch (error) {
+  } catch {
       return NextResponse.json({ error: 'Unknown Error' }, { status: 400 });
   }
 }
